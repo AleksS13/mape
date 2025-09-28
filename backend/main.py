@@ -1,0 +1,49 @@
+from contextlib import asynccontextmanager
+from typing import Annotated
+
+
+from database import engine
+from fastapi import Depends, FastAPI, HTTPException, Query
+from sqlmodel import Field, Session, SQLModel, create_engine, select
+from controllers import tip_putovanja_controller
+from starlette.middleware.cors import CORSMiddleware
+from controllers import putovanje_controller
+from controllers import destinacija_controller
+from controllers import mapa_controller
+from controllers import statistika_controller
+
+
+def create_db_and_tables():
+  SQLModel.metadata.create_all(engine)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+  create_db_and_tables()
+  yield
+  print("Gašenje aplikacije")
+
+
+def start_application():
+  app = FastAPI(lifespan=lifespan)
+
+  origins = ["*"]
+
+  app.add_middleware(
+    CORSMiddleware,
+    allow_origins= origins,
+    allow_credentials=True,
+    allow_methods= ["*"],
+    allow_headers=["*"]
+    )
+  
+  return app
+
+
+app = start_application()
+
+app.include_router(tip_putovanja_controller.router)
+app.include_router(putovanje_controller.router)
+app.include_router(destinacija_controller.router)
+app.include_router(mapa_controller.router)
+app.include_router(statistika_controller.router)

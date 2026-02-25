@@ -9,22 +9,22 @@ Ovaj repozitorij sadrži **frontend** aplikaciju izrađenu u okviru projekta za 
 ## 📌 Pregled aplikacije (Screenshots)
 
 ### 🏠 Početna stranica
-![Home](screenshots/homepage.png)
+![Home](/screenshots/homepage.png)
 
 ### 🗺️ Mapa destinacija
-![Mapa](screenshots/mapa.png)
+![Mapa](/screenshots/mapa.png)
 
 ### ✈️ Putovanja
-![Putovanja](screenshots/napraviputovanje.png)
+![Putovanja](/screenshots/napraviputovanje.png)
 
 ### 🏷️ Tipovi putovanja
-![Tipovi](screenshots/tipoviputovanja.png)
+![Tipovi](/screenshots/tipoviputovanja.png)
 
 ### ➕ Dodavanje tipa putovanja
-![Dodaj tip](screenshots/dodajtip.png)
+![Dodaj tip](/screenshots/dodajtip.png)
 
 ### 📊 Statistika
-![Statistika](screenshots/statistika.png)
+![Statistika](/screenshots/statistika.png)
 
 ---
 

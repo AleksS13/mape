@@ -48,5 +48,16 @@ Ako želiš pokrenuti samo frontend:
 
 1. Otvori repozitorij lokalno i uđi u folder:
 
+Frontend:
 ```bash
-cd mape/frontend
+cd frontend
+npm install
+npm run dev
+
+
+Backend:
+cd backend
+python -m venv venv
+# activate venv
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
